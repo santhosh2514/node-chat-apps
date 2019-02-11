@@ -16,10 +16,20 @@ app.get('/',()=>{
 io.on('connection',(socket)=>{
   console.log("new user connected");
 
+   socket.emit('newMessage',{
+     from:'Santhosh',
+     text:"heyeeeeeeey",
+     createAt:123
+   });
+
+   socket.on('createMessage',(newMessage)=>{
+     console.log('createMessage',newMessage);
+   })
   socket.on('disconnect',()=>{
   console.log('user is disconneted');
   })
 });
+
 server.listen(port,()=>{
   console.log(`lisitening on port ${port}`);
 });
