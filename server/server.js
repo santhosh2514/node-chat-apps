@@ -10,20 +10,20 @@ var server=http.createServer(app);
 var io = socketIO(server);
 
 app.use(express.static(publicPath));
-app.get('/',()=>{
-  res.render('index.html');
-})
+// app.get('/',()=>{
+//   res.render('index.html');
+// })
 io.on('connection',(socket)=>{
   console.log("new user connected");
 
-   socket.emit('newMessage',{
-     from:'Santhosh',
-     text:"heyeeeeeeey",
-     createAt:123
-   });
 
-   socket.on('createMessage',(newMessage)=>{
-     console.log('createMessage',newMessage);
+   socket.on('createMessage',(message)=>{
+     console.log('createMessage',message);
+     io.emit('newMessage',{
+       from:message.from,
+       text:message.text,
+       createdAt:new Date().getTime()
+     })
    })
   socket.on('disconnect',()=>{
   console.log('user is disconneted');
