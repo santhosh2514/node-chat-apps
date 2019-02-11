@@ -15,7 +15,11 @@ app.get('/',()=>{
 })
 io.on('connection',(socket)=>{
   console.log("new user connected");
-})
+
+  socket.on('disconnect',()=>{
+  console.log('user is disconneted');
+  })
+});
 server.listen(port,()=>{
   console.log(`lisitening on port ${port}`);
-})
+});
