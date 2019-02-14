@@ -52,12 +52,12 @@ button:disabled {
   background: -webkit-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* safari5.1+,chrome10+ */
   background: -o-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* opera 11.10+ */
   background: -ms-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ie10+ */
-  background: linear-gradient(325deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* w3c */
+  background: linear-gradient(325deg, #0d0a0a 0%, rgb(125, 10, 117) 100%); /* w3c */
 }
 
 .centered-form__form {
-  background: rgba(250, 250, 250, 0.9);
-  border: 1px solid deeppink;
+  background: #212121;
+  border: 5px solid deeppink;
   border-radius: 5px;
   padding: 0px 20px;
   margin: 20px;
