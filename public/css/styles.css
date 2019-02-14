@@ -80,8 +80,12 @@ button:disabled {
 .form-field input, .form-field select {
   border: 1px solid deeppink;
   padding: 10px;
+  outline: none;
 }
-
+.form-field input:focus{
+  border: 3px solid deeppink;
+  padding: 10px;
+}
 .chat {
   display: flex;
 }
